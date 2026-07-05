@@ -14,7 +14,7 @@ export function MovieCard({ movie }: MovieCardProps) {
             : 'https://placehold.co/300x450?text=No+Poster'
         }
         alt={movie.title}
-        className="rounded aspect-[2/3] object-cover w-full"
+        className="rounded aspect-2/3 object-cover w-full"
       />
       <p className="text-sm mt-1 truncate">{movie.title}</p>
     </div>
