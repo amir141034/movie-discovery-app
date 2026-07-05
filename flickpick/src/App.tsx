@@ -1,4 +1,4 @@
-import { useTrending } from './hooks/useTrending'
+import { useTrending } from './composables/useTrending'
 
 function App() {
   const { data, isLoading, isError, error } = useTrending()
