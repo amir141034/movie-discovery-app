@@ -35,7 +35,7 @@ A frontend-only movie discovery app built to explore state management, data fetc
 ## Running locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/movie-discovery-app.git
+git clone https://github.com/amir141034/movie-discovery-app.git
 cd movie-discovery-app
 npm install
 ```
