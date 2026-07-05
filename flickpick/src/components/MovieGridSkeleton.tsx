@@ -1,0 +1,11 @@
+import { MovieCardSkeleton } from './MovieCardSkeleton'
+
+export function MovieGridSkeleton({ count = 8 }: { count?: number }) {
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4">
+      {Array.from({ length: count }).map((_, i) => (
+        <MovieCardSkeleton key={i} />
+      ))}
+    </div>
+  )
+}
