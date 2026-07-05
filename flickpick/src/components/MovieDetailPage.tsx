@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useMovieDetail } from '../composables/useMovieDetail'
 import { MovieDetailSkeleton } from './MovieDetailSkeleton'
+import { FavoriteButton } from './FavouriteButton'
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -25,11 +26,12 @@ export function MovieDetailPage() {
               : 'https://placehold.co/400x600?text=No+Poster'
           }
           alt={data.title}
-          className="rounded w-64 flex-shrink-0"
+          className="rounded w-64 shrink-0"
         />
 
-        <div>
+        <div className='flex items-center gap-3'>
           <h1 className="text-2xl font-bold">{data.title}</h1>
+          <FavoriteButton movie={data} className="text-2xl" />
           {data.tagline && <p className="text-gray-400 italic mt-1">{data.tagline}</p>}
 
           <div className="flex gap-4 text-sm text-gray-300 mt-3">
@@ -51,7 +53,7 @@ export function MovieDetailPage() {
           <h2 className="text-lg font-semibold mt-6 mb-2">Cast</h2>
           <div className="flex gap-4 overflow-x-auto pb-2">
             {data.credits.cast.slice(0, 10).map((member) => (
-              <div key={member.id} className="text-center w-20 flex-shrink-0">
+              <div key={member.id} className="text-center w-20 shrink-0">
                 <img
                   src={
                     member.profile_path
@@ -59,7 +61,7 @@ export function MovieDetailPage() {
                       : 'https://placehold.co/200x300?text=No+Photo'
                   }
                   alt={member.name}
-                  className="rounded aspect-[2/3] object-cover w-full"
+                  className="rounded aspect-2/3 object-cover w-full"
                 />
                 <p className="text-xs mt-1 truncate">{member.name}</p>
               </div>
