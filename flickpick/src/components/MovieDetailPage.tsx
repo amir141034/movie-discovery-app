@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useMovieDetail } from '../composables/useMovieDetail'
 import { MovieDetailSkeleton } from './MovieDetailSkeleton'
-import { FavoriteButton } from './FavouriteButton'
+import { FavoriteButton } from './FavoriteButton'
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>()
