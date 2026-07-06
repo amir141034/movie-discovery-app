@@ -1,5 +1,5 @@
 const BASE_URL = 'https://api.themoviedb.org/3'
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY
+const API_KEY = '413f6608a632f106ca4a1c0f78cd2b8e'
 
 export async function tmdbFetch<T>(path: string, params: Record<string, string> = {}): Promise<T> {
   const url = new URL(`${BASE_URL}${path}`)

@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
-import { tmdbFetch } from '../api/tmdb'
-import { endpoints } from '../api/endpoints'
-import type { Movie, TMDBResponse } from '../types/tmdb'
+import { tmdbFetch } from '../../api/tmdb'
+import { endpoints } from '../../api/endpoints'
+import type { Movie, TMDBResponse } from '../../types/tmdb'
 
 export function useInfiniteMovies(genreId: number | null) {
   return useInfiniteQuery({

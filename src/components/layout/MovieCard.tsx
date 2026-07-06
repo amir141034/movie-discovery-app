@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Movie } from '../../types/tmdb'
-import { FavoriteButton } from './FavoriteButton'
+import { FavoriteButton } from '../favorite/FavoriteButton'
 
 interface MovieCardProps {
   movie: Movie

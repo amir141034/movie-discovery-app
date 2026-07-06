@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { toggleFavorite } from '../../composables/favoritesSlice'
+import { toggleFavorite } from '../../composables/favorite/favoritesSlice'
 import type { Movie } from '../../types/tmdb'
 
 interface FavoriteButtonProps {

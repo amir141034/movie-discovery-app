@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { Movie } from '../types/tmdb'
+import type { Movie } from '../../types/tmdb'
 
 interface FavoritesState {
   items: Movie[]

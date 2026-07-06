@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
-import { useSearchMovies } from '../../composables/useSearchMovies'
-import { useIntersectionObserver } from '../../composables/useIntersectionObserver'
+import { useSearchMovies } from '../../composables/search/useSearchMovies'
+import { useIntersectionObserver } from '../../composables/layout/useIntersectionObserver'
 import { MovieCard } from '../layout/MovieCard'
 import { MovieGridSkeleton } from '../skeleton/MovieGridSkeleton'
 

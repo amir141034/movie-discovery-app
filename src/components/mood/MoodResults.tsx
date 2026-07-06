@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
-import { useMoodMovies } from '../../composables/useMoodMovies'
-import { useIntersectionObserver } from '../../composables/useIntersectionObserver'
+import { useMoodMovies } from '../../composables/mood/useMoodMovies'
+import { useIntersectionObserver } from '../../composables/layout/useIntersectionObserver'
 import { MovieCard } from '../layout/MovieCard'
 import { MovieGridSkeleton } from '../skeleton/MovieGridSkeleton'
-import type { Mood } from '../../composables/moodConfig'
+import type { Mood } from '../../composables/mood/moodConfig'
 
 interface MoodResultsProps {
   mood: Mood

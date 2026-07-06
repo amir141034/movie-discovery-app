@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import favoritesReducer, { toggleFavorite } from './favoritesSlice'
-import type { Movie } from '../types/tmdb'
+import type { Movie } from '../../types/tmdb'
 
 const mockMovie: Movie = {
   id: 1,

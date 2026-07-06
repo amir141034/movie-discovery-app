@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import { FavoriteButton } from './FavoriteButton'
-import favoritesReducer from '../../composables/favoritesSlice'
+import favoritesReducer from '../../composables/favorite/favoritesSlice'
 import type { Movie } from '../../types/tmdb'
 
 const mockMovie: Movie = {
