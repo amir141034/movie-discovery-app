@@ -12,7 +12,7 @@ function App() {
       <nav className="flex justify-between items-center p-4 text-gray-900 dark:text-white">
         <Link to="/" className="font-bold text-lg">🎬 MovieDB</Link>
         <div className="flex items-center gap-4 text-sm">
-          <Link to="/moods" className="hover:underline">Moods</Link>
+          {/* <Link to="/moods" className="hover:underline">Moods</Link> */}
           <Link to="/watchlist" className="hover:underline">My Watchlist</Link>
           <DarkModeToggle />
         </div>
