@@ -3,7 +3,7 @@ import { BrowsePage } from './pages/BrowsePage'
 import { MovieDetailPage } from './pages/MovieDetailPage'
 import { WatchlistPage } from './pages/WatchListPage'
 import { MoodPage } from './pages/MoodPage'
-import { ThemeToggle } from './components/ThemeToggle'
+import { DarkModeToggle } from './components/DarkModeToggle'
 import { NotFound } from './components/Error'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <div className="flex items-center gap-4 text-sm">
           <Link to="/moods" className="hover:underline">Moods</Link>
           <Link to="/watchlist" className="hover:underline">My Watchlist</Link>
-          <ThemeToggle />
+          <DarkModeToggle />
         </div>
       </nav>
       <Routes>
