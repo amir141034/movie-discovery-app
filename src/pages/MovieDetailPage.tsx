@@ -26,7 +26,7 @@ export function MovieDetailPage() {
               : 'https://placehold.co/400x600?text=No+Poster'
           }
           alt={data.title}
-          className="rounded w-64 shrink-0"
+          className="rounded w-64"
         />
 
         <div className='flex items-center gap-3'>
