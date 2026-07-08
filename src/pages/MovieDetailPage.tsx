@@ -2,14 +2,29 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useMovieDetail } from '../composables/layout/useMovieDetail'
 import { MovieDetailSkeleton } from '../components/skeleton/MovieDetailSkeleton'
 import { FavoriteButton } from '../components/favorite/FavoriteButton'
+import { EmptyState } from '../components/error/EmptyState'
+import { ErrorPage } from '../components/error/ErrorPage'
+import { TmdbError } from "../api/tmdb"; // adjust path
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const { data, isLoading, isError, error } = useMovieDetail(Number(id))
+  const { data, isLoading, isError, error, refetch } = useMovieDetail(Number(id))
 
   if (isLoading) return <MovieDetailSkeleton />
-  if (isError) return <p className="text-red-500 p-4">Error: {error.message}</p>
+  if (isError) {
+  if (error instanceof TmdbError && error.status === 404) {
+      return (
+        <EmptyState
+          title="Movie not found"
+          message="This movie doesn't exist or may have been removed."
+          actionLabel="Back to browse"
+          actionHref="/"
+        />
+      );
+    }
+    return <ErrorPage fullPage={false} onRetry={refetch} />;
+  }
   if (!data) return null
 
   return (

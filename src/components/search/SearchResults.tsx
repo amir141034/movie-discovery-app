@@ -3,6 +3,7 @@ import { useSearchMovies } from '../../composables/search/useSearchMovies'
 import { useIntersectionObserver } from '../../composables/layout/useIntersectionObserver'
 import { MovieCard } from '../layout/MovieCard'
 import { MovieGridSkeleton } from '../skeleton/MovieGridSkeleton'
+import { EmptyState } from '../error/EmptyState'
 
 interface SearchResultsProps {
   query: string
@@ -34,7 +35,12 @@ export function SearchResults({ query }: SearchResultsProps) {
   const movies = data?.pages.flatMap((page) => page.results) ?? []
 
   if (movies.length === 0) {
-    return <p className="text-gray-600 dark:text-gray-400 p-4">No results found for "{query}"</p>
+    return (
+      <EmptyState
+        title="No results found"
+        message={`We couldn't find anything matching "${query}"`}
+      />
+    );
   }
 
   return (

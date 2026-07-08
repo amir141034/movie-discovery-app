@@ -5,7 +5,7 @@ import { WatchlistPage } from './pages/WatchListPage'
 import { MoodPage } from './pages/MoodPage'
 
 import { DarkModeToggle } from './components/DarkModeToggle'
-import { NotFound } from './components/Error'
+import { ErrorPage } from './components/error/ErrorPage'
 
 import { Clapperboard } from "lucide-react";
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetailPage />} />
         <Route path="/watchlist" element={<WatchlistPage />} />
         <Route path="/moods" element={<MoodPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   )
