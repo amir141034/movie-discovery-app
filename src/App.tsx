@@ -22,7 +22,7 @@ function App() {
         </Link>
         <div className="flex items-center gap-4 text-sm">
           {/* <Link to="/moods" className="hover:underline">Moods</Link> */}
-          <Link to="/watchlist">My Watchlist</Link>
+          <Link to="/watchlist" className='dark:hover:text-blue-600'>My Watchlist</Link>
           <DarkModeToggle />
         </div>
       </nav>

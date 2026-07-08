@@ -1,4 +1,5 @@
 import { useMode } from '../composables/useDarkModeToggle'
+import { Sun, Moon } from 'lucide-react';
 
 export function DarkModeToggle() {
   const { mode, toggleDarkMode } = useMode()
@@ -7,9 +8,21 @@ export function DarkModeToggle() {
     <button
       onClick={toggleDarkMode}
       aria-label="Toggle dark mode"
-      className="text-lg px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-800"
+      className="relative inline-flex items-center justify-center w-9 h-9 rounded-full
+                text-gray-600 dark:text-gray-300
+                hover:bg-gray-200 dark:hover:bg-gray-800
+                transition-colors duration-200"
     >
-      {mode === 'dark' ? '☀️' : '🌙'}
+      <Sun
+        className={`absolute h-5 w-5 ${
+          mode === 'dark' ? 'opacity-0' : 'opacity-100'
+        }`}
+      />
+      <Moon
+        className={`absolute h-5 w-5 ${
+          mode === 'dark' ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
     </button>
   )
 }
