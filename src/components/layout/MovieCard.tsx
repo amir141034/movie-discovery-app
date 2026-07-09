@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import type { Movie } from '../../types/tmdb'
 import { FavoriteButton } from '../favorite/FavoriteButton'
@@ -7,6 +8,15 @@ interface MovieCardProps {
 }
 
 export function MovieCard({ movie }: MovieCardProps) {
+  const posterUrl = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+    : 'https://placehold.co/300x450?text=No+Poster';
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = posterUrl;
+  }, [posterUrl]);
+
   return (
     <Link
       to={`/movie/${movie.id}`}
@@ -19,16 +29,10 @@ export function MovieCard({ movie }: MovieCardProps) {
 
       <div className="relative overflow-hidden rounded shadow-md group-hover:shadow-xl transition-shadow duration-300">
         <img
-          src={
-            movie.poster_path
-              ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-              : 'https://placehold.co/300x450?text=No+Poster'
-          }
+          src={posterUrl}
           alt={movie.title}
           className="aspect-2/3 object-cover w-full transition-transform duration-500 ease-out group-hover:scale-110"
         />
-
-        {/* gradient overlay + fade-in title on hover */}
         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
@@ -36,5 +40,5 @@ export function MovieCard({ movie }: MovieCardProps) {
         {movie.title}
       </p>
     </Link>
-  )
+  );
 }
