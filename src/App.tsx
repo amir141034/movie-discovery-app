@@ -1,21 +1,17 @@
 import { Routes, Route, Link } from 'react-router-dom'
-// import { Suspense, lazy } from 'react'
+import { Suspense, lazy } from 'react'
 
 import { DarkModeToggle } from './components/DarkModeToggle'
 import { ErrorPage } from './components/error/ErrorPage'
-// import { Loading } from './components/Loading'
+import Loading from './components/Loading'
 
-import { BrowsePage } from './pages/BrowsePage'
-import { MovieDetailPage } from './pages/MovieDetailPage'
-import { WatchlistPage } from './pages/WatchlistPage'
-// import { MoodPage } from './pages/MoodPage'
 
 import { Clapperboard } from "lucide-react";
 
 function App() {
-  // const BrowsePage = lazy(() => import("./pages/BrowsePage"))
-  // const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage"))
-  // const WatchListPage = lazy(() => import("./pages/WatchListPage"))
+  const BrowsePage = lazy(() => import("./pages/BrowsePage").then(m => ({ default: m.BrowsePage })))
+  const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage").then(m => ({ default: m.MovieDetailPage })))
+  const WatchlistPage = lazy(() => import("./pages/WatchlistPage").then(m => ({ default: m.WatchlistPage })))
   // const MoodPage = lazy(() => import("./pages/MoodPage"))
 
   return (
@@ -34,7 +30,7 @@ function App() {
           <DarkModeToggle />
         </div>
       </nav>
-      {/* <Suspense fallback={<Loading/>}> */}
+      <Suspense fallback={<Loading/>}>
         <Routes>
           <Route path="/" element={<BrowsePage />} />
           <Route path="/movie/:id" element={<MovieDetailPage />} />
@@ -42,7 +38,7 @@ function App() {
           {/* <Route path="/moods" element={<MoodPage />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      {/* </Suspense> */}
+      </Suspense>
     </div>
   )
 }
