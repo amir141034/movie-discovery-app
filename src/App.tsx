@@ -5,13 +5,18 @@ import { DarkModeToggle } from './components/DarkModeToggle'
 import { ErrorPage } from './components/error/ErrorPage'
 import { Loading } from './components/Loading'
 
+import { BrowsePage } from './pages/BrowsePage'
+import { MovieDetailPage } from './pages/MovieDetailPage'
+import { WatchlistPage } from './pages/WatchlistPage'
+import { MoodPage } from './pages/MoodPage'
+
 import { Clapperboard } from "lucide-react";
 
 function App() {
-  const BrowsePage = lazy(() => import("./pages/BrowsePage"))
-  const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage"))
-  const WatchListPage = lazy(() => import("./pages/WatchListPage"))
-  const MoodPage = lazy(() => import("./pages/MoodPage"))
+  // const BrowsePage = lazy(() => import("./pages/BrowsePage"))
+  // const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage"))
+  // const WatchListPage = lazy(() => import("./pages/WatchListPage"))
+  // const MoodPage = lazy(() => import("./pages/MoodPage"))
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -29,15 +34,15 @@ function App() {
           <DarkModeToggle />
         </div>
       </nav>
-      <Suspense fallback={<Loading/>}>
+      {/* <Suspense fallback={<Loading/>}> */}
         <Routes>
           <Route path="/" element={<BrowsePage />} />
           <Route path="/movie/:id" element={<MovieDetailPage />} />
-          <Route path="/watchlist" element={<WatchListPage />} />
+          <Route path="/watchlist" element={<WatchlistPage />} />
           {/* <Route path="/moods" element={<MoodPage />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </Suspense>
+      {/* </Suspense> */}
     </div>
   )
 }
