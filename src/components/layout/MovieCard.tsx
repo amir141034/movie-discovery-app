@@ -2,12 +2,15 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import type { Movie } from '../../types/tmdb'
 import { FavoriteButton } from '../favorite/FavoriteButton'
+import {usePrefetchMovieDetail} from '../../composables/layout/useMovieDetail'
 
 interface MovieCardProps {
   movie: Movie
 }
 
 export function MovieCard({ movie }: MovieCardProps) {
+  const prefetchMovieDetail = usePrefetchMovieDetail()
+
   const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
     : 'https://placehold.co/300x450?text=No+Poster';
@@ -20,6 +23,7 @@ export function MovieCard({ movie }: MovieCardProps) {
   return (
     <Link
       to={`/movie/${movie.id}`}
+      onMouseEnter={() => prefetchMovieDetail(movie.id)}
       className="group relative block text-gray-900 dark:text-white transition-transform duration-300 hover:-translate-y-1"
     >
       <FavoriteButton

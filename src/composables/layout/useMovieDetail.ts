@@ -14,3 +14,18 @@ export function useMovieDetail(id: number) {
     enabled: !!id,
   })
 }
+
+export function usePrefetchMovieDetail() {
+  const queryClient = useQueryClient()
+
+  return (id: number) => {
+    queryClient.prefetchQuery({
+      queryKey: ['movie', id],
+      queryFn: () =>
+        tmdbFetch<MovieDetail>(endpoints.movieDetail(id), {
+          append_to_response: 'credits',
+        }),
+      staleTime: 60 * 1000,
+    })
+  }
+}
