@@ -37,3 +37,17 @@ git clone https://github.com/amir141034/flickpick.git
 cd flickpick
 npm install
 ```
+
+Create a `.env` file in the root:
+
+Get a free key at [themoviedb.org](https://www.themoviedb.org/settings/api).
+
+```bash
+npm run dev
+```
+
+## Testing
+
+```bash
+npm run test
+```
