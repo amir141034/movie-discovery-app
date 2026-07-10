@@ -2,7 +2,7 @@
 
 A frontend-only, responsive movie browsing app built for state management, data fetching/caching, and basic testing in a modern React stack — no backend required.
 
-**Live demo:** [your-vercel-url-here]
+**Live demo:** (https://flickpick-rosy.vercel.app)
 
 ## Features
 
@@ -39,5 +39,3 @@ git clone https://github.com/amir141034/flickpick.git
 cd flickpick
 npm install
 ```
-
-Create a `.env` file in the root:
