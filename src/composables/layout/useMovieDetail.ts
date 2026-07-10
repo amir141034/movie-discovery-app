@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient  } from '@tanstack/react-query'
 import { tmdbFetch } from '../../api/tmdb'
 import { endpoints } from '../../api/endpoints'
 import type { MovieDetail } from '../../types/tmdb'
