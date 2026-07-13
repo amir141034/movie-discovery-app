@@ -29,7 +29,7 @@ export function MovieDetailPage() {
 
   return (
     <div className="p-4 text-gray-900 dark:text-white m-12">
-      <button onClick={() => navigate(-1)} className="mb-4 text-sm text-gray-600 dark:text-gray-400 hover:text-white">
+      <button onClick={() => navigate(-1)} className="mb-4 text-sm text-gray-600 dark:text-gray-400 hover:text-white hover:-translate-x-2.5 transition-transform duration-300">
         ← Back
       </button>
 
