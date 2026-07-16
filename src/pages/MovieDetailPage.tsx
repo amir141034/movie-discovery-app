@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import { useMovieDetail } from '../composables/layout/useMovieDetail'
+import { useMovieDetail } from '../features/layout/useMovieDetail'
 import { MovieDetailSkeleton } from '../components/skeleton/MovieDetailSkeleton'
 import { FavoriteButton } from '../components/favorite/FavoriteButton'
 import { EmptyState } from '../components/error/EmptyState'

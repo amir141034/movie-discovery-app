@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDebounce } from '../composables/search/useDebounce'
+import { useDebounce } from '../features/search/useDebounce'
 import { GenreSelector } from '../components/GenreSelector'
 import { MovieGrid } from '../components/layout/MovieGrid'
 import { SearchBar } from '../components/search/SearchBar'

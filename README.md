@@ -26,7 +26,7 @@ A frontend-only, responsive movie browsing app built for state management, data 
 
 ## Architecture notes
 
-- **Reusability-focused folder structure** (components/search, components/favorites, composables/search, composables/favorites) separates the project by the role of the code rather than by feature. I found this makes components and logic easier to locate and reuse as the application grows.
+- **Reusability-focused folder structure** (components/search, components/favorites, features/search, features/favorites) separates the project by the role of the code rather than by feature. I found this makes components and logic easier to locate and reuse as the application grows.
 - **Redux for client state, React Query for server state** — Favorites are the only data stored entirely on the client, so they live in a single Redux slice. Everything fetched from the TMDB API (trending, search, movie details, and mood recommendations) is managed through React Query hooks.
 - **useInfiniteMovies** combines trending and genre-filtered browsing into a single hook. When a genreId is provided, it fetches movies for that genre; otherwise, it falls back to trending movies.
 

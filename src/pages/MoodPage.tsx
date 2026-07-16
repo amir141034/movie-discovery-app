@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MoodSelector } from '../components/mood/MoodSelector'
 import { MoodResults } from '../components/mood/MoodResults'
-import type { Mood } from '../composables/mood/moodConfig'
+import type { Mood } from '../features/mood/moodConfig'
 
 export function MoodPage() {
   const [selectedMood, setSelectedMood] = useState<Mood | null>(null)

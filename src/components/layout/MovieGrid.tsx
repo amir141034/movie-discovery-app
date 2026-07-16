@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
-import { useInfiniteMovies } from '../../composables/layout/useInfiniteMovies'
-import { useIntersectionObserver } from '../../composables/layout/useIntersectionObserver'
+import { useInfiniteMovies } from '../../features/layout/useInfiniteMovies'
+import { useIntersectionObserver } from '../../features/layout/useIntersectionObserver'
 import { MovieCard } from './MovieCard'
 import { MovieGridSkeleton } from '../skeleton/MovieGridSkeleton'
 

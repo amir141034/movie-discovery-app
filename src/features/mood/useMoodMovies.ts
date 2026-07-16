@@ -2,7 +2,7 @@ import { useInfiniteQuery } from '@tanstack/react-query'
 import { tmdbFetch } from '../../api/tmdb'
 import { endpoints } from '../../api/endpoints'
 import type { Movie, TMDBResponse } from '../../types/tmdb'
-import type { Mood } from '../mood/moodConfig'
+import type { Mood } from './moodConfig'
 
 export function useMoodMovies(mood: Mood | null) {
   return useInfiniteQuery({
