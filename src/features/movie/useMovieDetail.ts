@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient  } from '@tanstack/react-query'
-import { tmdbFetch } from '../../api/tmdb'
-import { endpoints } from '../../api/endpoints'
+import { tmdbFetch } from '../../lib/tmdb'
+import { endpoints } from '../../lib/endpoints'
 import type { MovieDetail } from '../../types/tmdb'
 
 export function useMovieDetail(id: number) {

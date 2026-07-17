@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useAppSelector } from '../app/hooks'
-import { MovieCard } from '../components/layout/MovieCard'
+import { MovieCard } from '../components/movie/MovieCard'
 import { Heart, Film } from "lucide-react";
 
 export function WatchlistPage() {

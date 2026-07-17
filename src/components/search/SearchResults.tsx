@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useSearchMovies } from '../../features/search/useSearchMovies'
-import { useIntersectionObserver } from '../../features/layout/useIntersectionObserver'
-import { MovieCard } from '../layout/MovieCard'
+import { useIntersectionObserver } from '../../features/movie/useIntersectionObserver'
+import { MovieCard } from '../movie/MovieCard'
 import { MovieGridSkeleton } from '../skeleton/MovieGridSkeleton'
 import { EmptyState } from '../error/EmptyState'
 

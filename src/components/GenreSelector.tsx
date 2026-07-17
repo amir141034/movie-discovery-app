@@ -1,4 +1,4 @@
-import { useGenres } from '../features/useGenres'
+import { useGenres } from '../features/genre/useGenres'
 
 interface GenreSelectorProps {
   selectedGenre: number | null

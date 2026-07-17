@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import { useMovieDetail } from '../features/layout/useMovieDetail'
+import { useMovieDetail } from '../features/movie/useMovieDetail'
 import { MovieDetailSkeleton } from '../components/skeleton/MovieDetailSkeleton'
 import { FavoriteButton } from '../components/favorite/FavoriteButton'
 import { EmptyState } from '../components/error/EmptyState'
 import { ErrorPage } from '../components/error/ErrorPage'
-import { TmdbError } from "../api/tmdb"; // adjust path
+import { TmdbError } from "../lib/tmdb"; // adjust path
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>()

@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useDebounce } from '../features/search/useDebounce'
+import { useDebounce } from '../hooks/useDebounce'
 import { GenreSelector } from '../components/GenreSelector'
-import { MovieGrid } from '../components/layout/MovieGrid'
+import { MovieGrid } from '../components/movie/MovieGrid'
 import { SearchBar } from '../components/search/SearchBar'
 import { SearchResults } from '../components/search/SearchResults'
 

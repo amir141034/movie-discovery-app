@@ -1,4 +1,4 @@
-import { useMode } from '../../features/common/useDarkModeToggle'
+import { useMode } from '../../hooks/useDarkModeToggle'
 import { Sun, Moon } from 'lucide-react';
 
 export function DarkModeToggle() {

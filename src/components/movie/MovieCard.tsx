@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import type { Movie } from '../../types/tmdb'
 import { FavoriteButton } from '../favorite/FavoriteButton'
-import {usePrefetchMovieDetail} from '../../features/layout/useMovieDetail'
+import {usePrefetchMovieDetail} from '../../features/movie/useMovieDetail'
 
 interface MovieCardProps {
   movie: Movie
